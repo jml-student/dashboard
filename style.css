@@ -1,0 +1,56 @@
+:root {
+    --main-color: rgb(0, 162, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    
+}
+
+.dashboard {
+    grid-column: 1 / 2;
+    background-color: var(--main-color);
+}
+
+.content {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+}
+
+.header {
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.header-first-section {
+    grid-row: 1 / 2;
+    background-color: antiquewhite;
+}
+
+.content-body {
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.projects {
+    grid-area: 1 / 1 / 3 / 2;
+    background-color: beige;
+}
+
+.announcements {
+    background-color: blanchedalmond;
+}
