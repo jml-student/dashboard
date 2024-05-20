@@ -1,5 +1,6 @@
 :root {
     --main-color: rgb(0, 162, 255);
+    font-size: 16px;
 }
 
 * {
@@ -22,6 +23,39 @@ body {
 .dashboard {
     grid-column: 1 / 2;
     background-color: var(--main-color);
+    padding: 20px;
+    color: white;
+}
+
+.logo {
+    display: flex;
+}
+
+.logo svg {
+    height: 5vh;
+    width: auto;
+    color: white;
+    
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+
+}
+
+.menu ul li svg {
+    height: 2rem;
+    width: auto;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .content {
