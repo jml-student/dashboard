@@ -21,13 +21,17 @@
 
 body {
     display: grid;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 5fr;
     
+}
+
+svg:hover, button:hover {
+    cursor: pointer;
 }
 
 .dashboard {
@@ -65,6 +69,11 @@ body {
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
+.menu ul li:hover {
+    color: rgb(43, 43, 255);
+    cursor: pointer;
+}
+
 .menu ul li svg {
     height: clamp(30px, 2vw, 150px);
     width: auto;
@@ -79,16 +88,14 @@ body {
 
 .content {
     display: grid;
-    grid-template-rows: 20vh 80vh;
-    overflow-y: scroll;
+    grid-template-rows: 20vh;
 }
 
 .header {
     background-color: rgb(255, 255, 255);
     display: grid;
-    grid-template-rows: 75px 75px;
+    grid-template-rows: 50% 50%;
     box-shadow: 5px 2px 10px 0px rgb(168, 168, 168);
-    max-height: 170px;
 }
 
 .header-first-section {
@@ -116,14 +123,18 @@ body {
 }
 
 input#search {
-    background-color: rgb(223, 223, 223);
+    background-color: rgb(224, 224, 224);
     border: none;
     border-radius: 18px;
     font-size: 1rem;
     width: clamp(10vw, 40vw, 40vw);
     height: 2.2rem;
     padding-left: 20px;
-    
+    outline: none;
+}
+
+input#search:hover {
+    border: 2px solid rgb(141, 204, 255);
 }
 
 .username-block {
@@ -137,6 +148,13 @@ input#search {
     color: rgb(0, 0, 0);
     margin-right: 1vw;
     margin-left: 1vw;
+    box-sizing: content-box;
+    padding: 3px;
+    border-radius: 20px;
+}
+
+.svg-bell:hover {
+    background-color: rgb(226, 226, 226);
 }
 
 .svg-user-one {
@@ -145,6 +163,12 @@ input#search {
     color: var(--main-color);
     margin-right: 1vw;
     margin-left: 1vw;
+    padding: 1px;
+    border-radius: 20px;
+}
+
+.svg-user-one:hover {
+    background-color: rgb(226, 226, 226);
 }
 
 .username {
@@ -179,7 +203,8 @@ input#search {
 }
 
 .buttons-block {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
 }
 
@@ -194,12 +219,15 @@ input#search {
     margin-left: 1vw;
 }
 
+.button:hover {
+    background-color: rgb(70, 172, 255);
+}
+
 .content-body {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr;
     background-color: rgba(223, 240, 255, 0.5);
-    
 }
 
 .projects {
@@ -249,6 +277,40 @@ input#search {
     margin-left: 10px;
 }
 
+.svg-star {
+    color: rgb(230, 230, 16);
+    border-radius: 20px;
+    box-sizing: content-box;
+    padding: 3px;
+}
+
+.svg-star:hover {
+    background-color: rgb(226, 226, 226);
+    color: rgb(212, 212, 0);
+}
+
+.svg-eye {
+    color: rgb(7, 114, 133);
+    border-radius: 20px;
+    box-sizing: content-box;
+    padding: 3px;
+}
+
+.svg-eye:hover {
+    background-color: rgb(226, 226, 226);
+}
+
+.svg-share {
+    color: rgb(8, 119, 8);
+    border-radius: 20px;
+    box-sizing: content-box;
+    padding: 3px;
+}
+
+.svg-share:hover {
+    background-color: rgb(226, 226, 226);
+}
+
 .announcements {
     padding: 20px;
     padding-left: clamp(0px, 1vw, 5px);
@@ -285,7 +347,6 @@ input#search {
 }
 
 .trending {
-    padding: 20px;
     padding-left: clamp(0px, 1vw, 5px);
     padding-right: clamp(10px, 1vw, 20px);
 }
@@ -295,14 +356,45 @@ input#search {
     background-color: white;
     border-radius: 15px;
     padding: 20px;
+    padding-top: 5px;
     margin-top: 10px;
 }
 
+.trending-content {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.tegan {
+    margin-bottom: 10px;
+}
+
+.trending-username + p {
+    font-size: clamp(0.8rem, 1.8vw, 1rem);
+    color: rgb(83, 83, 83);
+    font-weight: 200;
+}
+
 .trending-content svg {
-    height: 2.5rem;
+    height: 3rem;
     width: auto;
     margin-right: 1vw;
     margin-left: 1vw;
     border: 1px solid rgb(194, 194, 194);
     border-radius: 25px;
+}
+
+@media screen and (max-width: 670px) {
+    .content-body {
+        grid-template-columns: 1fr;
+    }
+
+    .announcements {
+        padding-left: 10px;
+    }
+
+    .trending {
+        padding-left: 10px;
+    }
 }
